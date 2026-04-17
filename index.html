@@ -1,0 +1,1488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dudley Services — Vermiculite & Asbestos Abatement Since 1987</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,400&family=JetBrains+Mono:wght@400;500;700&family=Inter+Tight:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    /* Palette drawn directly from the Dudley Services logo */
+    --ink: #2a3744;           /* deep navy-charcoal for headlines */
+    --ink-2: #3a3a3a;          /* logo's charcoal for body text */
+    --blue: #66a1c3;           /* logo primary blue */
+    --blue-light: #98b4c2;     /* logo lighter blue */
+    --blue-dark: #4a82a3;      /* darker shade for hover states */
+    --blue-deep: #1f3a52;      /* deep navy for heavy sections */
+    --paper: #fbfbfb;          /* logo off-white */
+    --paper-2: #f2f5f8;        /* soft blue-tinted gray */
+    --paper-3: #e4ecf2;        /* slightly deeper blue-gray */
+    --rule: rgba(42, 55, 68, 0.12);
+    --rule-light: rgba(251, 251, 251, 0.15);
+    --display: "Fraunces", Georgia, serif;
+    --sans: "Inter Tight", system-ui, sans-serif;
+    --mono: "JetBrains Mono", monospace;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--paper);
+    color: var(--ink-2);
+    font-family: var(--sans);
+    font-size: 16px;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  /* ═══════════════ TOP BAR ═══════════════ */
+  .topbar {
+    background: var(--blue-deep);
+    color: var(--paper);
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 10px 0;
+  }
+  .topbar-inner {
+    max-width: 1360px;
+    margin: 0 auto;
+    padding: 0 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+  }
+  .topbar-left { display: flex; gap: 28px; flex-wrap: wrap; }
+  .topbar-left span { opacity: 0.75; }
+  .topbar-left strong { color: var(--blue-light); font-weight: 500; letter-spacing: 0.12em; }
+  .topbar-right a {
+    color: var(--paper);
+    text-decoration: none;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .topbar-right a:hover { color: var(--blue-light); }
+
+  /* ═══════════════ NAV ═══════════════ */
+  nav.main {
+    background: var(--paper);
+    border-bottom: 1px solid var(--rule);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    backdrop-filter: blur(10px);
+  }
+  .nav-inner {
+    max-width: 1360px;
+    margin: 0 auto;
+    padding: 16px 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .logo-link {
+    display: block;
+    line-height: 0;
+  }
+  .logo-link img {
+    height: 64px;
+    width: auto;
+    display: block;
+  }
+  .nav-links {
+    display: flex;
+    gap: 36px;
+    align-items: center;
+    list-style: none;
+  }
+  .nav-links a {
+    color: var(--ink);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    position: relative;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--blue); }
+  .nav-links a::after {
+    content: "";
+    position: absolute;
+    bottom: -6px; left: 0;
+    width: 0; height: 2px;
+    background: var(--blue);
+    transition: width 0.25s ease;
+  }
+  .nav-links a:hover::after { width: 100%; }
+
+  .btn {
+    display: inline-block;
+    padding: 12px 24px;
+    background: var(--blue);
+    color: var(--paper);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: 0.02em;
+    border: 2px solid var(--blue);
+    transition: all 0.2s;
+    cursor: pointer;
+    font-family: inherit;
+  }
+  .btn:hover {
+    background: var(--blue-dark);
+    border-color: var(--blue-dark);
+    transform: translateY(-1px);
+    box-shadow: 0 6px 16px rgba(102, 161, 195, 0.25);
+  }
+  .btn-ghost {
+    background: transparent;
+    color: var(--ink);
+    border: 2px solid var(--ink);
+  }
+  .btn-ghost:hover { background: var(--ink); color: var(--paper); }
+  .btn-lg { padding: 16px 32px; font-size: 15px; }
+
+  /* ═══════════════ HERO ═══════════════ */
+  .hero {
+    background: var(--paper);
+    color: var(--ink);
+    position: relative;
+    overflow: hidden;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    padding: 80px 0 120px;
+  }
+  .hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+      radial-gradient(circle at 15% 20%, rgba(102, 161, 195, 0.10) 0%, transparent 50%),
+      radial-gradient(circle at 85% 80%, rgba(152, 180, 194, 0.08) 0%, transparent 50%);
+    pointer-events: none;
+  }
+  .hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(42, 55, 68, 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(42, 55, 68, 0.03) 1px, transparent 1px);
+    background-size: 60px 60px;
+    pointer-events: none;
+  }
+  .hero-inner {
+    max-width: 1360px;
+    margin: 0 auto;
+    padding: 0 32px;
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 420px;
+    gap: 80px;
+    align-items: center;
+  }
+  .hero-eyebrow {
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--blue);
+    margin-bottom: 32px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    opacity: 0;
+    animation: fadeUp 0.8s ease 0.1s forwards;
+  }
+  .hero-eyebrow::before {
+    content: "";
+    width: 40px; height: 1px; background: var(--blue);
+  }
+  .hero h1 {
+    font-family: var(--display);
+    font-size: clamp(48px, 6.5vw, 92px);
+    font-weight: 300;
+    line-height: 0.97;
+    letter-spacing: -0.03em;
+    margin-bottom: 32px;
+    color: var(--ink);
+    opacity: 0;
+    animation: fadeUp 0.8s ease 0.2s forwards;
+  }
+  .hero h1 em {
+    font-style: italic;
+    font-weight: 500;
+    color: var(--blue);
+  }
+  .hero-lede {
+    font-size: 19px;
+    line-height: 1.55;
+    color: var(--ink-2);
+    max-width: 560px;
+    margin-bottom: 40px;
+    opacity: 0;
+    animation: fadeUp 0.8s ease 0.35s forwards;
+  }
+  .hero-ctas {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    opacity: 0;
+    animation: fadeUp 0.8s ease 0.5s forwards;
+  }
+
+  /* Hero stat card */
+  .hero-card {
+    background: var(--paper);
+    color: var(--ink);
+    padding: 40px 36px;
+    border: 1px solid var(--rule);
+    box-shadow: 20px 20px 0 var(--blue);
+    opacity: 0;
+    animation: fadeUp 0.8s ease 0.6s forwards;
+    position: relative;
+  }
+  .hero-card-label {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    opacity: 0.6;
+    margin-bottom: 8px;
+  }
+  .hero-card-title {
+    font-family: var(--display);
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--rule);
+  }
+  .hero-card-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .hero-card-stat .num {
+    font-family: var(--display);
+    font-size: 44px;
+    font-weight: 600;
+    line-height: 1;
+    color: var(--blue);
+    letter-spacing: -0.02em;
+  }
+  .hero-card-stat .lbl {
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-top: 6px;
+    opacity: 0.7;
+  }
+  .hero-card-footer {
+    margin-top: 24px;
+    padding-top: 20px;
+    border-top: 1px solid var(--rule);
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    display: flex;
+    justify-content: space-between;
+    opacity: 0.7;
+  }
+
+  /* Bottom ticker */
+  .hero-ticker {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    background: var(--paper-2);
+    border-top: 1px solid var(--rule);
+    padding: 16px 0;
+    overflow: hidden;
+    z-index: 2;
+  }
+  .ticker-track {
+    display: flex;
+    gap: 60px;
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--ink-2);
+    animation: ticker 40s linear infinite;
+    white-space: nowrap;
+  }
+  .ticker-track span { display: flex; align-items: center; gap: 12px; }
+  .ticker-track span::before { content: "◆"; color: var(--blue); }
+
+  @keyframes ticker {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ═══════════════ MASS SAVE CALLOUT ═══════════════ */
+  .mass-save {
+    background: var(--blue-deep);
+    color: var(--paper);
+    padding: 28px 0;
+    border-bottom: 4px solid var(--blue);
+  }
+  .mass-save-inner {
+    max-width: 1360px;
+    margin: 0 auto;
+    padding: 0 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+    flex-wrap: wrap;
+  }
+  .mass-save-left { display: flex; align-items: center; gap: 20px; flex: 1; min-width: 300px; }
+  .mass-save-badge {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    background: var(--blue);
+    color: var(--paper);
+    padding: 6px 12px;
+    white-space: nowrap;
+    font-weight: 600;
+  }
+  .mass-save-text {
+    font-family: var(--display);
+    font-size: 22px;
+    font-weight: 500;
+    line-height: 1.3;
+  }
+  .mass-save-text strong { color: var(--blue-light); font-weight: 600; }
+  .mass-save a {
+    color: var(--paper);
+    text-decoration: none;
+    font-weight: 600;
+    border-bottom: 2px solid var(--blue-light);
+    padding-bottom: 2px;
+    font-size: 14px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+  .mass-save a:hover { color: var(--blue-light); }
+
+  /* ═══════════════ SECTION ═══════════════ */
+  section { padding: 120px 0; }
+  .container { max-width: 1360px; margin: 0 auto; padding: 0 32px; }
+
+  .section-header {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 80px;
+    margin-bottom: 80px;
+    align-items: end;
+  }
+  .section-eyebrow {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--blue);
+    margin-bottom: 12px;
+    display: block;
+  }
+  .section-num {
+    font-family: var(--display);
+    font-size: 14px;
+    font-weight: 400;
+    opacity: 0.5;
+    font-style: italic;
+    margin-bottom: 24px;
+  }
+  .section-title {
+    font-family: var(--display);
+    font-size: clamp(40px, 5vw, 72px);
+    font-weight: 300;
+    line-height: 1;
+    letter-spacing: -0.025em;
+    color: var(--ink);
+  }
+  .section-title em { font-style: italic; font-weight: 500; color: var(--blue); }
+  .section-intro {
+    font-size: 17px;
+    line-height: 1.6;
+    color: var(--ink-2);
+    max-width: 560px;
+  }
+
+  /* ═══════════════ SERVICES ═══════════════ */
+  .services {
+    background: var(--paper);
+    position: relative;
+  }
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    border-top: 1px solid var(--ink);
+  }
+  .service {
+    padding: 48px 40px 48px 0;
+    border-bottom: 1px solid var(--rule);
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    gap: 24px;
+    cursor: pointer;
+    transition: all 0.3s;
+    position: relative;
+  }
+  .service:nth-child(odd) { border-right: 1px solid var(--rule); padding-right: 40px; }
+  .service:nth-child(even) { padding-left: 40px; }
+  .service:hover { background: var(--blue-deep); color: var(--paper); padding-left: 48px; }
+  .service:nth-child(even):hover { padding-left: 48px; }
+  .service-num {
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    opacity: 0.5;
+    padding-top: 8px;
+  }
+  .service-title {
+    font-family: var(--display);
+    font-size: 28px;
+    font-weight: 500;
+    line-height: 1.15;
+    margin-bottom: 16px;
+    letter-spacing: -0.015em;
+    color: inherit;
+  }
+  .service-desc {
+    font-size: 15px;
+    line-height: 1.55;
+    opacity: 0.85;
+    margin-bottom: 20px;
+  }
+  .service-meta {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    display: flex;
+    gap: 20px;
+    opacity: 0.6;
+  }
+  .service:hover .service-meta { opacity: 1; }
+  .service:hover .service-meta span { color: var(--blue-light); }
+  .service-arrow {
+    position: absolute;
+    top: 48px;
+    right: 40px;
+    font-size: 24px;
+    opacity: 0;
+    transform: translateX(-10px);
+    transition: all 0.3s;
+  }
+  .service:hover .service-arrow { opacity: 1; transform: translateX(0); color: var(--blue-light); }
+
+  /* ═══════════════ BEST SYSTEM ═══════════════ */
+  .best-system {
+    background: var(--blue-deep);
+    color: var(--paper);
+    position: relative;
+    overflow: hidden;
+  }
+  .best-system::before {
+    content: "BEST";
+    position: absolute;
+    bottom: -40px;
+    right: -20px;
+    font-family: var(--display);
+    font-size: 380px;
+    font-weight: 700;
+    line-height: 0.8;
+    color: rgba(251, 251, 251, 0.03);
+    letter-spacing: -0.05em;
+    pointer-events: none;
+    z-index: 0;
+  }
+  .best-inner { position: relative; z-index: 1; }
+  .best-system .section-title { color: var(--paper); }
+  .best-system .section-eyebrow { color: var(--blue-light); }
+  .best-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: start;
+  }
+  .best-left .section-intro { color: rgba(251, 251, 251, 0.8); max-width: 480px; }
+  .best-acronym {
+    font-family: var(--mono);
+    font-size: 13px;
+    letter-spacing: 0.15em;
+    color: rgba(251, 251, 251, 0.8);
+    margin-top: 32px;
+    line-height: 1.8;
+  }
+  .best-acronym span {
+    color: var(--blue-light);
+    font-weight: 700;
+    display: inline-block;
+    width: 16px;
+  }
+  .best-steps { display: flex; flex-direction: column; gap: 0; }
+  .best-step {
+    padding: 28px 0;
+    border-bottom: 1px solid var(--rule-light);
+    display: grid;
+    grid-template-columns: 48px 1fr;
+    gap: 24px;
+  }
+  .best-step:first-child { border-top: 1px solid var(--rule-light); }
+  .best-step-num {
+    font-family: var(--display);
+    font-size: 32px;
+    font-weight: 300;
+    color: var(--blue-light);
+    letter-spacing: -0.02em;
+  }
+  .best-step-title {
+    font-family: var(--display);
+    font-size: 22px;
+    font-weight: 500;
+    margin-bottom: 8px;
+  }
+  .best-step-desc { font-size: 14px; line-height: 1.55; opacity: 0.8; }
+
+  /* ═══════════════ STATS ═══════════════ */
+  .stats {
+    background: var(--paper-2);
+    padding: 80px 0;
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+  }
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+  }
+  .stat {
+    padding: 0 32px;
+    border-right: 1px solid var(--rule);
+    text-align: left;
+  }
+  .stat:last-child { border-right: none; }
+  .stat-num {
+    font-family: var(--display);
+    font-size: clamp(56px, 6vw, 88px);
+    font-weight: 300;
+    line-height: 1;
+    letter-spacing: -0.03em;
+    margin-bottom: 12px;
+    color: var(--ink);
+  }
+  .stat-num em { color: var(--blue); font-style: normal; }
+  .stat-lbl {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    opacity: 0.7;
+    line-height: 1.5;
+  }
+
+  /* ═══════════════ VESPA ═══════════════ */
+  .vespa {
+    background: var(--paper);
+    position: relative;
+  }
+  .vespa-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+  .vespa-visual {
+    background: var(--blue-deep);
+    color: var(--paper);
+    padding: 48px;
+    border: 1px solid var(--blue-deep);
+    box-shadow: -16px 16px 0 var(--blue);
+    font-family: var(--mono);
+    font-size: 13px;
+    line-height: 1.7;
+    position: relative;
+  }
+  .vespa-visual::before {
+    content: "VESPA.exe";
+    position: absolute;
+    top: -12px;
+    left: 24px;
+    background: var(--paper);
+    color: var(--ink);
+    padding: 2px 10px;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+  .vespa-line { display: flex; gap: 12px; margin-bottom: 6px; }
+  .vespa-line .prompt { color: var(--blue-light); }
+  .vespa-line .comment { opacity: 0.55; }
+  .vespa-line .key { color: rgba(251, 251, 251, 0.85); }
+  .vespa-line .val { color: #9dd5b3; }
+  .vespa-line .num { color: #f0c674; }
+
+  .cursor {
+    display: inline-block;
+    width: 8px; height: 14px;
+    background: var(--blue-light);
+    animation: blink 1s infinite;
+    vertical-align: middle;
+    margin-left: 2px;
+  }
+  @keyframes blink { 50% { opacity: 0; } }
+
+  .vespa-text h2 { margin-bottom: 32px; }
+  .vespa-features { list-style: none; margin-top: 32px; }
+  .vespa-features li {
+    padding: 16px 0;
+    border-top: 1px solid var(--rule);
+    display: flex;
+    gap: 16px;
+    align-items: start;
+  }
+  .vespa-features li:last-child { border-bottom: 1px solid var(--rule); }
+  .vespa-features .check {
+    color: var(--blue);
+    font-weight: 700;
+    font-family: var(--mono);
+    flex-shrink: 0;
+  }
+  .vespa-features strong { font-weight: 600; display: block; margin-bottom: 4px; color: var(--ink); }
+  .vespa-features span { font-size: 14px; opacity: 0.8; line-height: 1.5; }
+
+  /* ═══════════════ TESTIMONIALS ═══════════════ */
+  .testimonials {
+    background: var(--ink);
+    color: var(--paper);
+  }
+  .testimonials .section-title { color: var(--paper); }
+  .testimonials .section-eyebrow { color: var(--blue-light); }
+  .testimonials .section-intro { color: rgba(251, 251, 251, 0.8); }
+  .quotes-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: rgba(251, 251, 251, 0.1);
+    border-top: 1px solid rgba(251, 251, 251, 0.1);
+    border-bottom: 1px solid rgba(251, 251, 251, 0.1);
+  }
+  .quote {
+    background: var(--ink);
+    padding: 48px 36px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 320px;
+  }
+  .quote-mark {
+    font-family: var(--display);
+    font-size: 80px;
+    font-weight: 400;
+    line-height: 0.5;
+    color: var(--blue);
+    margin-bottom: 16px;
+  }
+  .quote-text {
+    font-family: var(--display);
+    font-size: 20px;
+    line-height: 1.4;
+    font-weight: 400;
+    font-style: italic;
+    margin-bottom: 24px;
+    letter-spacing: -0.01em;
+  }
+  .quote-attr {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    opacity: 0.6;
+    padding-top: 20px;
+    border-top: 1px solid rgba(251, 251, 251, 0.1);
+  }
+  .quote-attr strong { color: var(--blue-light); font-weight: 500; }
+
+  .dude-discount {
+    text-align: center;
+    margin-top: 64px;
+    padding: 32px;
+    border: 1px dashed rgba(251, 251, 251, 0.2);
+  }
+  .dude-discount p {
+    font-family: var(--display);
+    font-size: 22px;
+    font-style: italic;
+    margin-bottom: 8px;
+  }
+  .dude-discount small {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--blue-light);
+  }
+
+  /* ═══════════════ ESTIMATE ═══════════════ */
+  .estimate {
+    background: var(--paper-2);
+    position: relative;
+  }
+  .estimate-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 80px;
+  }
+  .estimate-left .section-title { margin-bottom: 24px; }
+  .estimate-promise {
+    list-style: none;
+    margin-top: 40px;
+    padding-top: 32px;
+    border-top: 1px solid var(--rule);
+  }
+  .estimate-promise li {
+    padding: 12px 0;
+    font-size: 15px;
+    display: flex;
+    gap: 14px;
+    align-items: center;
+  }
+  .estimate-promise li::before {
+    content: "→";
+    color: var(--blue);
+    font-weight: 700;
+  }
+  .estimate-direct {
+    margin-top: 40px;
+    padding: 24px;
+    background: var(--paper);
+    border-left: 4px solid var(--blue);
+  }
+  .estimate-direct .lbl {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    opacity: 0.6;
+    margin-bottom: 6px;
+  }
+  .estimate-direct .phone {
+    font-family: var(--display);
+    font-size: 28px;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+  }
+  .estimate-direct .email {
+    font-family: var(--mono);
+    font-size: 14px;
+    margin-top: 4px;
+    color: var(--ink-2);
+  }
+
+  .form {
+    background: var(--paper);
+    padding: 48px;
+    border: 1px solid var(--rule);
+    box-shadow: 16px 16px 0 var(--blue);
+  }
+  .form-header {
+    padding-bottom: 24px;
+    margin-bottom: 32px;
+    border-bottom: 1px solid var(--rule);
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+  .form-header h3 {
+    font-family: var(--display);
+    font-size: 28px;
+    font-weight: 500;
+    letter-spacing: -0.015em;
+    color: var(--ink);
+  }
+  .form-header small {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    opacity: 0.6;
+  }
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 20px;
+  }
+  .form-field { display: flex; flex-direction: column; }
+  .form-field.full { grid-column: 1 / -1; }
+  .form-field label {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    opacity: 0.7;
+  }
+  .form-field input,
+  .form-field select,
+  .form-field textarea {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid var(--ink);
+    padding: 10px 0;
+    font-family: inherit;
+    font-size: 15px;
+    color: var(--ink);
+    outline: none;
+    transition: border-color 0.2s;
+  }
+  .form-field input:focus,
+  .form-field select:focus,
+  .form-field textarea:focus { border-bottom-color: var(--blue); border-bottom-width: 2px; padding-bottom: 9px; }
+  .form-field textarea { resize: vertical; min-height: 80px; }
+  .form-submit {
+    margin-top: 16px;
+    width: 100%;
+    padding: 18px;
+    font-size: 14px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
+  .form-disclaimer {
+    margin-top: 16px;
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    opacity: 0.55;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  /* ═══════════════ FOOTER ═══════════════ */
+  footer {
+    background: var(--blue-deep);
+    color: var(--paper);
+    padding: 80px 0 32px;
+  }
+  .footer-top {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 64px;
+    padding-bottom: 64px;
+    border-bottom: 1px solid var(--rule-light);
+  }
+  .footer-brand { max-width: 380px; }
+  .footer-logo-wrap {
+    background: var(--paper);
+    padding: 16px 20px;
+    display: inline-block;
+    margin-bottom: 20px;
+  }
+  .footer-logo-wrap img { height: 60px; width: auto; display: block; }
+  .footer-tag {
+    font-size: 15px;
+    line-height: 1.55;
+    opacity: 0.8;
+    margin-bottom: 24px;
+  }
+  .footer-license {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    padding: 12px 16px;
+    background: rgba(251, 251, 251, 0.06);
+    border-left: 3px solid var(--blue-light);
+    display: inline-block;
+  }
+  .footer-col h4 {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--blue-light);
+    margin-bottom: 20px;
+    font-weight: 500;
+  }
+  .footer-col ul { list-style: none; }
+  .footer-col li { margin-bottom: 10px; }
+  .footer-col a {
+    color: var(--paper);
+    text-decoration: none;
+    font-size: 14px;
+    opacity: 0.8;
+    transition: opacity 0.2s;
+  }
+  .footer-col a:hover { opacity: 1; color: var(--blue-light); }
+  .footer-bottom {
+    padding-top: 32px;
+    display: flex;
+    justify-content: space-between;
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    opacity: 0.6;
+  }
+
+  /* ═══════════════ RESPONSIVE ═══════════════ */
+  @media (max-width: 1024px) {
+    .hero-inner { grid-template-columns: 1fr; gap: 48px; }
+    .hero-card { max-width: 420px; }
+    .section-header { grid-template-columns: 1fr; gap: 32px; margin-bottom: 48px; }
+    .services-grid { grid-template-columns: 1fr; }
+    .service:nth-child(odd) { border-right: none; padding-right: 0; }
+    .service:nth-child(even) { padding-left: 0; }
+    .service { padding: 32px 0; }
+    .best-grid, .vespa-grid, .estimate-grid { grid-template-columns: 1fr; gap: 48px; }
+    .quotes-grid { grid-template-columns: 1fr; }
+    .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 32px 0; }
+    .stat { border-right: none; border-bottom: 1px solid var(--rule); padding-bottom: 32px; }
+    .footer-top { grid-template-columns: 1fr 1fr; gap: 40px; }
+    .footer-brand { grid-column: 1 / -1; }
+  }
+  @media (max-width: 640px) {
+    section { padding: 80px 0; }
+    .container, .hero-inner, .nav-inner, .topbar-inner, .mass-save-inner { padding-left: 20px; padding-right: 20px; }
+    .nav-links { display: none; }
+    .logo-link img { height: 48px; }
+    .form { padding: 28px 24px; box-shadow: 8px 8px 0 var(--blue); }
+    .form-row { grid-template-columns: 1fr; gap: 12px; }
+    .hero { padding: 48px 0 100px; min-height: auto; }
+    .mass-save-text { font-size: 17px; }
+    .stats-grid { grid-template-columns: 1fr; }
+    .footer-top { grid-template-columns: 1fr; }
+    .footer-bottom { flex-direction: column; gap: 12px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="topbar">
+  <div class="topbar-inner">
+    <div class="topbar-left">
+      <span><strong>LIC.</strong> AC000112</span>
+      <span><strong>EST.</strong> 1987</span>
+      <span><strong>SERVING</strong> Eastern & Central Massachusetts</span>
+    </div>
+    <div class="topbar-right">
+      <a href="tel:6179814280">☎ 617 · 981 · 4280</a>
+    </div>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav class="main">
+  <div class="nav-inner">
+    <a href="#" class="logo-link" aria-label="Dudley Services">
+      <img src="logo.svg" alt="Dudley Services — Boston Asbestos & Vermiculite Removal">
+    </a>
+    <ul class="nav-links">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#best">The BEST Process</a></li>
+      <li><a href="#vespa">VESPA</a></li>
+      <li><a href="#testimonials">Customers</a></li>
+      <li><a href="#estimate" class="btn">Get an Estimate</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-content">
+      <div class="hero-eyebrow">Vermiculite & Asbestos Abatement · Since 1987</div>
+      <h1>
+        Forty years.<br>
+        Twenty thousand<br>
+        <em>clean attics.</em>
+      </h1>
+      <p class="hero-lede">
+        Dudley Services is Greater Boston's specialized vermiculite and asbestos abatement company. We do one thing — safe, thorough removal — and we've been doing it longer than anyone in the Commonwealth.
+      </p>
+      <div class="hero-ctas">
+        <a href="#estimate" class="btn btn-lg">Request No-Cost Estimate →</a>
+        <a href="#best" class="btn btn-lg btn-ghost">See Our Process</a>
+      </div>
+    </div>
+
+    <div class="hero-card">
+      <div class="hero-card-label">At a glance</div>
+      <div class="hero-card-title">The most trusted abatement contractor in Massachusetts.</div>
+      <div class="hero-card-stats">
+        <div class="hero-card-stat">
+          <div class="num">20K+</div>
+          <div class="lbl">Projects Completed</div>
+        </div>
+        <div class="hero-card-stat">
+          <div class="num">40</div>
+          <div class="lbl">Years in Business</div>
+        </div>
+        <div class="hero-card-stat">
+          <div class="num">$0</div>
+          <div class="lbl">Cost for Estimates</div>
+        </div>
+        <div class="hero-card-stat">
+          <div class="num">2wk</div>
+          <div class="lbl">Barium Test Turnaround</div>
+        </div>
+      </div>
+      <div class="hero-card-footer">
+        <span>License AC000112</span>
+        <span>Fully Insured</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-ticker">
+    <div class="ticker-track">
+      <span>Mass Save Turnkey Partner 2026</span>
+      <span>ZAI Trust Claim Assistance</span>
+      <span>Up to $5,000 in Rebates</span>
+      <span>Free Barium Testing</span>
+      <span>DocuSign Contracts</span>
+      <span>Online Payments</span>
+      <span>Mass Save Turnkey Partner 2026</span>
+      <span>ZAI Trust Claim Assistance</span>
+      <span>Up to $5,000 in Rebates</span>
+      <span>Free Barium Testing</span>
+      <span>DocuSign Contracts</span>
+      <span>Online Payments</span>
+    </div>
+  </div>
+</section>
+
+<!-- MASS SAVE CALLOUT -->
+<div class="mass-save">
+  <div class="mass-save-inner">
+    <div class="mass-save-left">
+      <div class="mass-save-badge">NEW · 2026</div>
+      <div class="mass-save-text">
+        Qualified partner in the Mass Save <strong>Turnkey Solutions Program</strong> — eligible properties may receive up to 100% coverage for abatement.
+      </div>
+    </div>
+    <a href="#">Check Eligibility →</a>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="container">
+    <div class="section-header">
+      <div>
+        <div class="section-eyebrow">§ 01 — What We Do</div>
+        <div class="section-num">Four specializations, one focus.</div>
+      </div>
+      <h2 class="section-title">A narrow focus,<br>sharpened over <em>four decades.</em></h2>
+    </div>
+  </div>
+  <div class="container">
+    <div class="services-grid">
+      <div class="service">
+        <div class="service-num">01</div>
+        <div>
+          <div class="service-title">Vermiculite Removal</div>
+          <p class="service-desc">Our proprietary BEST (Bulk Extraction System Technology) vacuum system handles vermiculite mixed with cellulose, mineral wool, calcium silicate, or fiberglass — in homes 400 years old or brand new.</p>
+          <div class="service-meta">
+            <span>Residential</span>
+            <span>Commercial</span>
+            <span>Attics & Walls</span>
+          </div>
+        </div>
+        <div class="service-arrow">→</div>
+      </div>
+
+      <div class="service">
+        <div class="service-num">02</div>
+        <div>
+          <div class="service-title">Boiler, Pipe & Duct Asbestos</div>
+          <p class="service-desc">Decades of experience with Greater Boston's wide range of heating systems — boilers, furnaces, pipes, and ductwork — removed safely with the precautions fire-generating systems demand.</p>
+          <div class="service-meta">
+            <span>HVAC Systems</span>
+            <span>Residential</span>
+            <span>Commercial</span>
+          </div>
+        </div>
+        <div class="service-arrow">→</div>
+      </div>
+
+      <div class="service">
+        <div class="service-num">03</div>
+        <div>
+          <div class="service-title">Flooring Removal & Finishing</div>
+          <p class="service-desc">Asbestos linoleum and vinyl tile removed from kitchens, bathrooms, and basements. We'll paint or seal the floor afterward — just tell us what color.</p>
+          <div class="service-meta">
+            <span>Linoleum</span>
+            <span>Vinyl Tile</span>
+            <span>Paint Included</span>
+          </div>
+        </div>
+        <div class="service-arrow">→</div>
+      </div>
+
+      <div class="service">
+        <div class="service-num">04</div>
+        <div>
+          <div class="service-title">Complex Project Planning</div>
+          <p class="service-desc">20,000+ abatement projects in one of the most complex housing markets in the country. We plan, permit, and execute — from Capes to Victorians to commercial buildings.</p>
+          <div class="service-meta">
+            <span>Permitting</span>
+            <span>Planning</span>
+            <span>Compliance</span>
+          </div>
+        </div>
+        <div class="service-arrow">→</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BEST SYSTEM -->
+<section class="best-system" id="best">
+  <div class="container best-inner">
+    <div class="section-header">
+      <div>
+        <div class="section-eyebrow">§ 02 — The BEST Process</div>
+        <div class="section-num" style="color: rgba(251,251,251,0.5);">Our proprietary vacuum system.</div>
+      </div>
+      <h2 class="section-title">We don't just<br>remove it.<br><em>We extract it.</em></h2>
+    </div>
+
+    <div class="best-grid">
+      <div class="best-left">
+        <p class="section-intro">
+          The Bulk Extraction System Technology — our proprietary HEPA-filtered continuous-suction system — turns one of the most difficult abatement jobs into a controlled, repeatable procedure. After 40 years refining it, Dudley Services is the only contractor in the region that can remove vermiculite mixed with any other insulation type without contamination risk.
+        </p>
+        <div class="best-acronym">
+          <div><span>B</span> ulk</div>
+          <div><span>E</span> xtraction</div>
+          <div><span>S</span> ystem</div>
+          <div><span>T</span> echnology</div>
+        </div>
+      </div>
+
+      <div class="best-steps">
+        <div class="best-step">
+          <div class="best-step-num">01</div>
+          <div>
+            <div class="best-step-title">Containment & Preparation</div>
+            <div class="best-step-desc">The most important step. Seal the work zone, protect adjacent spaces, establish negative air pressure.</div>
+          </div>
+        </div>
+        <div class="best-step">
+          <div class="best-step-num">02</div>
+          <div>
+            <div class="best-step-title">HEPA-Filtered Continuous Suction</div>
+            <div class="best-step-desc">Our BEST vacuum system runs continuously through the extraction — no batching, no pauses, no airborne particles.</div>
+          </div>
+        </div>
+        <div class="best-step">
+          <div class="best-step-num">03</div>
+          <div>
+            <div class="best-step-title">Mixed-Insulation Extraction</div>
+            <div class="best-step-desc">Vermiculite mixed with cellulose, mineral wool, calcium silicate, fiberglass — we extract them together, safely.</div>
+          </div>
+        </div>
+        <div class="best-step">
+          <div class="best-step-num">04</div>
+          <div>
+            <div class="best-step-title">Manifested Disposal</div>
+            <div class="best-step-desc">All waste goes to licensed EPA-approved landfills with full chain-of-custody manifests for your records.</div>
+          </div>
+        </div>
+        <div class="best-step">
+          <div class="best-step-num">05</div>
+          <div>
+            <div class="best-step-title">Completion Documentation</div>
+            <div class="best-step-desc">Before-and-after photos, lab reports, permits, and manifests — everything you need for the sale, the insurer, or your file.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="stats">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat">
+        <div class="stat-num"><em>20,000+</em></div>
+        <div class="stat-lbl">Abatement Projects<br>Successfully Completed</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num"><em>40</em></div>
+        <div class="stat-lbl">Years Serving<br>Massachusetts Homeowners</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num"><em>$5K</em></div>
+        <div class="stat-lbl">Maximum ZAI Trust<br>Rebate We Help Secure</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num"><em>100%</em></div>
+        <div class="stat-lbl">Mass Save Coverage<br>For Eligible Properties</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VESPA -->
+<section class="vespa" id="vespa">
+  <div class="container">
+    <div class="section-header">
+      <div>
+        <div class="section-eyebrow">§ 03 — VESPA</div>
+        <div class="section-num">Vermiculite Estimating Software Program Application.</div>
+      </div>
+      <h2 class="section-title">Estimates in your<br>inbox, <em>not weeks later.</em></h2>
+    </div>
+
+    <div class="vespa-grid">
+      <div class="vespa-visual">
+        <div class="vespa-line"><span class="prompt">&gt;</span> <span class="comment">// VESPA · estimating engine v.2026</span></div>
+        <div class="vespa-line"><span class="prompt">&gt;</span> load project:<span class="key"> "142_Maple_St"</span></div>
+        <div class="vespa-line"><span class="prompt">&gt;</span> sqft<span class="key">:</span> <span class="num">1,240</span></div>
+        <div class="vespa-line"><span class="prompt">&gt;</span> depth<span class="key">:</span> <span class="num">6"</span> <span class="val">// vermiculite + cellulose mix</span></div>
+        <div class="vespa-line"><span class="prompt">&gt;</span> access<span class="key">:</span> <span class="val">"standard attic pulldown"</span></div>
+        <div class="vespa-line"><span class="prompt">&gt;</span> permits<span class="key">:</span> <span class="val">"MA-DLS filed"</span></div>
+        <div class="vespa-line"><span class="prompt">&gt;</span> zai_credit<span class="key">:</span> <span class="num">-$4,150</span></div>
+        <div class="vespa-line"><span class="prompt">&gt;</span> masssave<span class="key">:</span> <span class="val">"eligible · review pending"</span></div>
+        <div class="vespa-line" style="margin-top: 16px; padding-top: 16px; border-top: 1px dashed rgba(251,251,251,0.2);"><span class="prompt">&gt;</span> <span class="comment">generating estimate PDF...</span></div>
+        <div class="vespa-line"><span class="prompt">&gt;</span> <span class="comment">sending to client inbox...</span></div>
+        <div class="vespa-line"><span class="prompt">&gt;</span> status<span class="key">:</span> <span class="val">"delivered · 00:00:04"</span><span class="cursor"></span></div>
+      </div>
+
+      <div class="vespa-text">
+        <p class="section-intro">
+          VESPA is our in-house estimating system — purpose-built for the specific complexity of Massachusetts vermiculite work. It factors in insulation depth, access difficulty, ZAI Trust offsets, and now Mass Save eligibility, and gets a written estimate into your inbox fast.
+        </p>
+        <ul class="vespa-features">
+          <li><span class="check">✓</span><div><strong>Fast turnaround</strong><span>Estimates arrive by email within hours, not days.</span></div></li>
+          <li><span class="check">✓</span><div><strong>ZAI Trust built in</strong><span>We calculate your rebate up front so you know the real price.</span></div></li>
+          <li><span class="check">✓</span><div><strong>Mass Save integration</strong><span>For 2026 Turnkey Program-eligible properties, VESPA flags it automatically.</span></div></li>
+          <li><span class="check">✓</span><div><strong>DocuSign contracts</strong><span>Sign from your couch. No office visit required.</span></div></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials" id="testimonials">
+  <div class="container">
+    <div class="section-header">
+      <div>
+        <div class="section-eyebrow">§ 04 — Customers</div>
+        <div class="section-num" style="color: rgba(251,251,251,0.5);">Four decades of word-of-mouth.</div>
+      </div>
+      <h2 class="section-title">Some customers<br>have used us in <em>four houses.</em></h2>
+    </div>
+
+    <div class="quotes-grid">
+      <div class="quote">
+        <div>
+          <div class="quote-mark">"</div>
+          <div class="quote-text">Sam and his crew did a fantastic job. He informed us about the process, and sent us all of the before-and-after photos and lab reports.</div>
+        </div>
+        <div class="quote-attr"><strong>Angi Review</strong> · Verified Customer</div>
+      </div>
+
+      <div class="quote">
+        <div>
+          <div class="quote-mark">"</div>
+          <div class="quote-text">Everything went well. No problems, no surprises. On time and on budget — what more can you ask for?</div>
+        </div>
+        <div class="quote-attr"><strong>HomeAdvisor</strong> · Verified Customer</div>
+      </div>
+
+      <div class="quote">
+        <div>
+          <div class="quote-mark">"</div>
+          <div class="quote-text">Fast, clean, very professional. Best price out of 4 estimates. Nice workers, polite, hard working.</div>
+        </div>
+        <div class="quote-attr"><strong>Yelp</strong> · Verified Customer</div>
+      </div>
+    </div>
+
+    <div class="dude-discount">
+      <p>"The Dude abides. I don't know about you but I take comfort in that."</p>
+      <small>— Ask about the Dude Discount</small>
+    </div>
+  </div>
+</section>
+
+<!-- ESTIMATE -->
+<section class="estimate" id="estimate">
+  <div class="container">
+    <div class="estimate-grid">
+      <div class="estimate-left">
+        <div class="section-eyebrow">§ 05 — Get Started</div>
+        <div class="section-num">Takes about 60 seconds.</div>
+        <h2 class="section-title">Request a <em>no-cost</em> estimate.</h2>
+        <p class="section-intro" style="margin-top: 24px;">
+          Tell us about your property. We'll reach out within one business day — usually much sooner — and walk you through what we're seeing.
+        </p>
+
+        <ul class="estimate-promise">
+          <li>Free onsite or virtual evaluation</li>
+          <li>Free barium testing with 2-week turnaround</li>
+          <li>Vermiculite + asbestos quoted together</li>
+          <li>ZAI Trust & Mass Save help included</li>
+        </ul>
+
+        <div class="estimate-direct">
+          <div class="lbl">Prefer to call?</div>
+          <div class="phone">617 · 981 · 4280</div>
+          <div class="email">dudleyservices@gmail.com</div>
+        </div>
+      </div>
+
+      <form class="form" onsubmit="event.preventDefault(); alert('Mockup form — this would submit to your CRM.');">
+        <div class="form-header">
+          <h3>Estimate Request</h3>
+          <small>No. 2026-0001</small>
+        </div>
+
+        <div class="form-row">
+          <div class="form-field">
+            <label>Full Name</label>
+            <input type="text" placeholder="Jane Homeowner" required>
+          </div>
+          <div class="form-field">
+            <label>Phone</label>
+            <input type="tel" placeholder="(617) 555-0142" required>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-field full">
+            <label>Email</label>
+            <input type="email" placeholder="jane@example.com" required>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-field">
+            <label>Property Address</label>
+            <input type="text" placeholder="142 Maple St, Woburn">
+          </div>
+          <div class="form-field">
+            <label>Service Needed</label>
+            <select>
+              <option>Vermiculite Removal</option>
+              <option>Asbestos Pipe/Boiler</option>
+              <option>Flooring Removal</option>
+              <option>Not Sure — Need Inspection</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-field">
+            <label>Approx. Attic/Area Size</label>
+            <select>
+              <option>Under 500 sq ft</option>
+              <option>500 – 1,000 sq ft</option>
+              <option>1,000 – 2,000 sq ft</option>
+              <option>Over 2,000 sq ft</option>
+              <option>Not sure</option>
+            </select>
+          </div>
+          <div class="form-field">
+            <label>Timeline</label>
+            <select>
+              <option>ASAP / Closing Soon</option>
+              <option>Within 1 month</option>
+              <option>Within 3 months</option>
+              <option>Just gathering info</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-field full">
+            <label>Anything else we should know?</label>
+            <textarea placeholder="Tell us about the property, access, or any concerns..."></textarea>
+          </div>
+        </div>
+
+        <button type="submit" class="btn form-submit">Send Request →</button>
+        <div class="form-disclaimer">We respond within 1 business day · Free · No obligation</div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-logo-wrap">
+          <img src="logo.svg" alt="Dudley Services">
+        </div>
+        <p class="footer-tag">
+          Family-owned vermiculite and asbestos abatement specialists. Serving Eastern and Central Massachusetts homeowners and businesses since 1987.
+        </p>
+        <div class="footer-license">MA Asbestos Contractor License · AC000112</div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#">Vermiculite Removal</a></li>
+          <li><a href="#">Asbestos Abatement</a></li>
+          <li><a href="#">Flooring Removal</a></li>
+          <li><a href="#">Project Planning</a></li>
+          <li><a href="#">Inspections</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="#">The BEST Process</a></li>
+          <li><a href="#">Vermiculite FAQs</a></li>
+          <li><a href="#">ZAI Trust Info</a></li>
+          <li><a href="#">Mass Save Partnership</a></li>
+          <li><a href="#">License Verification</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:6179814280">617 · 981 · 4280</a></li>
+          <li><a href="mailto:dudleyservices@gmail.com">dudleyservices@gmail.com</a></li>
+          <li><a href="#">150-L New Boston St<br>Woburn, MA 01801</a></li>
+          <li><a href="#">Facebook</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div>© 2026 Dudley Services, Inc. · All Rights Reserved</div>
+      <div>Privacy · Terms · Site Credits</div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

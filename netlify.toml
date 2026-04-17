@@ -1,0 +1,27 @@
+# Netlify configuration for Dudley Services website
+# Docs: https://docs.netlify.com/configure-builds/file-based-configuration/
+
+[build]
+  # No build step — site is static HTML/CSS
+  publish = "."
+
+# Security headers
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "geolocation=(), microphone=(), camera=()"
+
+# Cache logo aggressively (it rarely changes)
+[[headers]]
+  for = "/logo.svg"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# Don't cache HTML — we want content updates to be immediate
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
