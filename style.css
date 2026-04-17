@@ -961,6 +961,9 @@ footer {
   section { padding: 80px 0; }
   .container, .hero-inner, .nav-inner, .topbar-inner, .mass-save-inner { padding-left: 20px; padding-right: 20px; }
 
+  /* Topbar: hide "SERVING" text, keep license + phone */
+  .topbar-left span:last-child { display: none; }
+
   /* Hide desktop nav links, show hamburger */
   .nav-links {
     display: none;
@@ -994,12 +997,28 @@ footer {
   }
   .nav-toggle { display: flex; }
 
-  .logo-link img { height: 128px; }
+  /* Logo: smaller in sticky nav on mobile */
+  .logo-link img { height: 80px; }
+
+  /* Hero */
+  .hero { padding: 48px 0 100px; min-height: auto; }
+  .hero-card { max-width: 100%; box-shadow: 10px 10px 0 var(--blue); }
+
+  /* Mass save: allow text to shrink freely */
+  .mass-save-left { min-width: 0; }
+  .mass-save-text { font-size: 17px; }
+
+  /* Stats: remove bottom border on last item */
+  .stats-grid { grid-template-columns: 1fr; }
+  .stat:last-child { border-bottom: none; }
+
+  /* VESPA terminal: smaller text and shadow, prevent horizontal overflow */
+  .vespa-visual { font-size: 11px; padding: 32px 20px; box-shadow: 8px 8px 0 var(--blue); overflow-x: auto; }
+
   .form { padding: 28px 24px; box-shadow: 8px 8px 0 var(--blue); }
   .form-row { grid-template-columns: 1fr; gap: 12px; }
-  .hero { padding: 48px 0 100px; min-height: auto; }
-  .mass-save-text { font-size: 17px; }
-  .stats-grid { grid-template-columns: 1fr; }
+
+  .footer-brand { max-width: 100%; }
   .footer-top { grid-template-columns: 1fr; }
   .footer-bottom { flex-direction: column; gap: 12px; }
 }
